@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     siteName: "ZTA LAB",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image.jpeg",
         width: 1200,
         height: 628,
         alt: "ZTA LAB - Digital Engineering & AI Agency",
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     title: "ZTA LAB | Modern Digital Engineering & AI Agency",
     description:
       "Architecting high-performance web software, AI automation, and digital brand product systems.",
-    images: ["/og-image.png"],
+    images: ["/og-image.jpeg"],
     creator: "@ztalab",
   },
   robots: {
