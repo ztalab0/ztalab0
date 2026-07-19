@@ -1,100 +1,128 @@
 <div align="center">
 
-  <!-- Header Animated Banner -->
-  <img src="https://readme-typing-svg.demolab.com?font=Outfit&weight=800&size=38&duration=3000&pause=1000&color=26E09C&center=true&vCenter=true&width=750&height=70&lines=ZTA+LAB+%7C+Digital+Engineering+%26+AI;Fueling+Business+Growth+With+Innovation;Architecting+High-Performance+Digital+Products" alt="ZTA LAB Header" />
+  <h1>✨ ZTA LAB - Agency Website</h1>
 
   <p align="center">
-    <strong>Architecting High-Performance Web Software, AI Workflows & Digital Product Systems</strong>
+    <strong>Modern, Responsive & High-Performance Agency Website built with Next.js 16, React 19, Tailwind CSS v4, and Shadcn UI.</strong>
   </p>
 
-  <!-- Status & Metrics Badges -->
   <p align="center">
-    <a href="https://ztalab0.github.io/ztalab0"><img src="https://img.shields.io/badge/Official__Portal-ZTA__LAB-26E09C?style=for-the-badge&logo=vercel&logoColor=051F20" alt="Official Portal"></a>
-    <a href="#impact"><img src="https://img.shields.io/badge/Completed__Projects-25K%2B-0B2B26?style=for-the-badge&logo=rocket&logoColor=26E09C" alt="Completed Projects"></a>
-    <a href="#about"><img src="https://img.shields.io/badge/Client__Retention-99.8%25-163832?style=for-the-badge&logo=check-circle&logoColor=26E09C" alt="Client Retention"></a>
-    <a href="mailto:hello@ztalab.com"><img src="https://img.shields.io/badge/Inquiry-hello%40ztalab.com-235347?style=for-the-badge&logo=gmail&logoColor=26E09C" alt="Email Direct"></a>
+    <img src="https://img.shields.io/badge/Next.js_16-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js 16" />
+    <img src="https://img.shields.io/badge/React_19-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React 19" />
+    <img src="https://img.shields.io/badge/Tailwind_v4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS v4" />
+    <img src="https://img.shields.io/badge/Shadcn_UI-000000?style=for-the-badge&logo=shadcnui&logoColor=white" alt="Shadcn UI" />
+    <img src="https://img.shields.io/badge/Bun-000000?style=for-the-badge&logo=bun&logoColor=white" alt="Bun" />
+    <img src="https://img.shields.io/badge/Output-Static__Export-26E09C?style=for-the-badge&logo=vercel&logoColor=051F20" alt="Static Export" />
   </p>
 
 </div>
 
 ---
 
-### 🌐 Executive Overview
+## 📖 Project Overview
 
-**ZTA LAB** is a global digital engineering lab and creative agency. We build mission-critical enterprise web applications, AI automation ecosystems, high-availability cloud architecture, and award-winning digital brand experiences.
+This codebase houses the official website for **ZTA LAB**, a top-tier digital engineering lab & creative agency. The application features a rich, responsive dark-teal aesthetic with smooth glassmorphism effects, auto-playing headline sliders, continuous marquees, interactive portfolio modals, and shadcn-powered carousels.
 
-We partner with high-growth startups, market leaders, and global enterprises to accelerate digital transformation, scale technical infrastructure, and drive measurable revenue growth.
-
----
-
-### 🎯 Core Capabilities & Services
-
-<table>
-  <tr>
-    <td width="50%" valign="top">
-      <h4>💻 Enterprise Web Engineering</h4>
-      <p>Building high-speed, secure, and resilient web applications designed for infinite scale, flawless SEO, and exceptional user experiences.</p>
-    </td>
-    <td width="50%" valign="top">
-      <h4>🤖 AI & Autonomous Workflows</h4>
-      <p>Custom LLM integrations, document intelligence, automated operational pipelines, and predictive neural machine learning models.</p>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <h4>☁️ Cloud Architecture & DevOps</h4>
-      <p>High-availability cloud infrastructure, Kubernetes orchestration, zero-trust security auditing, and automated CI/CD deployment pipelines.</p>
-    </td>
-    <td width="50%" valign="top">
-      <h4>🎨 Brand Strategy & UI/UX Systems</h4>
-      <p>World-class design systems, interactive product prototyping, conversion-driven visual identities, and comprehensive brand guidelines.</p>
-    </td>
-  </tr>
-</table>
+The site is configured for **Static HTML Export** (`output: 'export'` in `next.config.ts`), making it ready for instant deployment on GitHub Pages, Vercel, Netlify, or any static hosting provider.
 
 ---
 
-### 📊 Proven Track Record & Global Impact
+## 🎨 Design System & Theme Palette
 
-<div align="center">
+The application uses standard **Shadcn CSS design tokens** defined in `src/app/globals.css`, ensuring all components seamlessly share the dark agency teal aesthetic:
 
-|      Metric      |      Benchmark      | Description                                                         |
-| :--------------: | :-----------------: | :------------------------------------------------------------------ |
-|  🚀 **25,000+**  | Projects Delivered  | Successfully engineered across fintech, AI, eCommerce, & healthcare |
-|  🤝 **7,000+**   |    Happy Clients    | Global enterprise partners & visionary scale-ups                    |
-|    🏆 **95**     |   Industry Awards   | Recognized for technical precision & UX excellence                  |
-| ⏱️ **15+ Years** | Industry Experience | Delivering scalable digital product architecture                    |
-|   ⚡ **99.8%**   |  Client Retention   | Dedicated engineering support & long-term partnership               |
-
-</div>
+- **Base Background** (`--background`): `#051F20` (Deep Dark Teal)
+- **Card Surface** (`--card`): `#0B2B26` (Dark Card & Panel Background)
+- **Accent Surface** (`--secondary`): `#163832` (Surface & Icon Badge Container)
+- **Teal Border** (`--border` / `--input`): `#235347` (Borders & Dividers)
+- **Muted Text** (`--muted-foreground`): `#8EB69B` (Soft Mint Subtitles)
+- **Primary Accent** (`--primary`): `#26E09C` (Neon Mint Primary Action Buttons & Rings)
+- **Primary Text** (`--foreground`): `#FFFFFF` / `#DAF0EE` (High-Contrast Body Text)
 
 ---
 
-### 🛠️ Core Technology Stack
+## 🧩 Key Architecture & Components
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js" />
-  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
-  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
-  <img src="https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="TailwindCSS" />
-  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js" />
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
-  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
-  <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" alt="Kubernetes" />
-</p>
+```
+src/
+├── app/
+│   ├── globals.css           # Shadcn design tokens & keyframe animations
+│   ├── layout.tsx            # Root layout component
+│   └── page.tsx              # Main homepage assembly
+├── components/
+│   ├── ui/
+│   │   ├── button.tsx        # Shadcn button primitive
+│   │   └── carousel.tsx      # Official Shadcn/Embla carousel wrapper
+│   ├── AboutSection.tsx      # Agency overview & 99.8% retention metric grid
+│   ├── BrandMarquee.tsx      # Infinite horizontal collaborator ticker
+│   ├── CompletedProjects.tsx # Filterable 2-card portfolio carousel
+│   ├── ContactSection.tsx    # Interactive intake form & direct contact sidebar
+│   ├── Footer.tsx            # Simplified footer with quick call box & back-to-top
+│   ├── Hero.tsx              # Headline slider, stat counters & glowing review frame
+│   ├── ImpactStats.tsx       # Numerical key metrics display (25K+ Projects)
+│   ├── MouseFollower.tsx     # Custom trailing ring cursor follower
+│   ├── Navbar.tsx            # Sticky glass header with dual-icon animated CTA
+│   ├── OurServices.tsx       # 3-card services carousel with custom SVG badges
+│   ├── ProjectModal.tsx      # Interactive project details drawer
+│   ├── TeamSection.tsx       # Team member cards with active online status
+│   └── TestimonialsSection.tsx # 5-star client review carousel
+└── lib/
+    └── utils.ts              # Tailwind class merge utility (cn)
+```
 
 ---
 
-<div align="center">
+## 🚀 Getting Started
 
-### 📬 Partner With ZTA LAB
+### Prerequisites
 
-Have a project in mind or need expert technical consultation? Reach out directly to our project strategists.
+Make sure you have **[Bun](https://bun.sh)** installed on your machine.
 
-**Live Portal**: [https://ztalab.com](https://ztalab.com) &nbsp;|&nbsp;
-**Direct Email**: [hello@ztalab.com](mailto:hello@ztalab.com) &nbsp;|&nbsp;
-**Phone Line**: (603) 555-0123
+### Installation
 
-<sub><strong>Headquarters</strong>: House 178/196, Avenue 01, Uttara DOHS, Dhaka, Bangladesh</sub>
+```bash
+# 1. Clone the repository
+git clone https://github.com/ztalab0/.github.git
+cd .github
 
-</div>
+# 2. Install dependencies using Bun
+bun install
+```
+
+### Development Server
+
+Run the development server locally:
+
+```bash
+bun dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to view the application.
+
+### Static Build & Export
+
+To generate the static HTML export bundle:
+
+```bash
+bun run build
+```
+
+The compiled static site output will be generated in the `./out` directory.
+
+---
+
+## ⚙️ Deployment (GitHub Pages)
+
+This repository includes a pre-configured GitHub Actions workflow located at `.github/workflows/nextjs.yml`. 
+
+Whenever code is pushed to the `master` branch, the workflow will automatically:
+1. Setup the Bun runtime environment.
+2. Install project dependencies (`bun install`).
+3. Compile the static site (`bun run build`).
+4. Upload the `./out` artifact and deploy to **GitHub Pages**.
+
+---
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
