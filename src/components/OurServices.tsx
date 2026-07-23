@@ -3,12 +3,11 @@
 import {
   ArrowUpRight,
   Sparkles,
-  BarChart3,
-  Cloud,
-  ShieldCheck,
-  Code2,
-  BrainCircuit,
-  Palette,
+  Globe,
+  Smartphone,
+  TrendingUp,
+  Search,
+  CheckCircle,
 } from "lucide-react";
 import {
   Carousel,
@@ -22,51 +21,42 @@ export default function OurServices() {
   const services = [
     {
       id: "1",
-      title: "Data Analytics & BI",
-      icon: BarChart3,
+      title: "Website Design & Development",
+      icon: Globe,
       description:
-        "Transform raw enterprise data into actionable business intelligence, custom KPI dashboards, and automated forecasting models.",
+        "We create fast, responsive, and visually stunning websites tailored to your business needs.",
+      bulletPoints: ["Business websites", "E-commerce platforms", "Portfolio & landing pages"],
     },
     {
       id: "2",
-      title: "Cloud & DevOps Solutions",
-      icon: Cloud,
+      title: "App Development",
+      icon: Smartphone,
       description:
-        "High-availability cloud architecture, CI/CD pipeline automation, serverless scaling, and Kubernetes cluster orchestration.",
+        "We design and develop scalable mobile and web applications.",
+      bulletPoints: ["Android & iOS apps", "Custom web applications", "UI/UX design"],
     },
     {
       id: "3",
-      title: "Cyber Security & Auditing",
-      icon: ShieldCheck,
+      title: "Digital Marketing",
+      icon: TrendingUp,
       description:
-        "End-to-end security penetration testing, SOC2 compliance auditing, zero-trust architecture, and real-time threat mitigation.",
-    },
-    {
-      id: "4",
-      title: "Web & Product Engineering",
-      icon: Code2,
-      description:
-        "Full-stack Next.js and Node.js web applications built for speed, SEO excellence, and enterprise-grade performance.",
-    },
-    {
-      id: "5",
-      title: "AI & Workflow Automation",
-      icon: BrainCircuit,
-      description:
-        "Custom LLM integrations, AI agent development, automated workflow pipelines, and predictive machine learning models.",
-    },
-    {
-      id: "6",
-      title: "Brand Strategy & UI/UX",
-      icon: Palette,
-      description:
-        "World-class design systems, interactive prototypes, user research, and comprehensive brand identity packages.",
+        "We help your business reach the right audience and grow online.",
+      bulletPoints: ["Social media marketing", "SEO optimization", "Paid advertising (Google & Meta Ads)"],
     },
   ];
 
+  const processSteps = [
+    { step: "01", title: "Discovery", desc: "Understanding your idea and goals" },
+    { step: "02", title: "Planning", desc: "Strategy, design, and roadmap" },
+    { step: "03", title: "Development", desc: "Building your product" },
+    { step: "04", title: "Launch", desc: "Deployment and testing" },
+    { step: "05", title: "Growth", desc: "Marketing and optimization" },
+  ];
+
   return (
-    <section id="services" className="py-20 sm:py-24 bg-card/60 border-t border-border/50 relative">
+    <section id="services" className="py-20 sm:py-24 bg-card/40 border-t border-border/50 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Services Carousel Header */}
         <Carousel
           opts={{
             align: "start",
@@ -74,7 +64,6 @@ export default function OurServices() {
           }}
           className="w-full"
         >
-          {/* Header & Controls */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 sm:mb-12">
             <div>
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-background border border-border w-fit mb-3">
@@ -83,19 +72,19 @@ export default function OurServices() {
                   Our Services
                 </span>
               </div>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-foreground">
-                Explore what services <br className="hidden sm:block" /> We're offering
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground">
+                Tailored Services for <br className="hidden sm:block" /> Digital Growth
               </h2>
             </div>
 
-            {/* Top-Right Slider Arrow Buttons */}
+            {/* Slider Arrow Controls */}
             <div className="flex items-center gap-3 relative">
               <CarouselPrevious className="static translate-y-0 w-12 h-12 rounded-full border border-border bg-background text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all" />
               <CarouselNext className="static translate-y-0 w-12 h-12 rounded-full border border-border bg-background text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all" />
             </div>
           </div>
 
-          {/* 3-Card Carousel Grid using Shadcn Carousel */}
+          {/* Services Cards Carousel Track */}
           <CarouselContent className="-ml-4">
             {services.map((service) => {
               const IconComponent = service.icon;
@@ -103,7 +92,7 @@ export default function OurServices() {
                 <CarouselItem key={service.id} className="pl-4 md:basis-1/3">
                   <div className="group glass-panel bg-card p-6 sm:p-8 rounded-3xl border border-border hover:border-primary/60 transition-all duration-500 hover:-translate-y-2 shadow-xl flex flex-col justify-between h-full">
                     <div>
-                      {/* Neon Green Custom Icon Badge */}
+                      {/* Icon Badge */}
                       <div className="w-14 h-14 rounded-2xl bg-secondary border border-border flex items-center justify-center text-primary mb-6 sm:mb-8 group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
                         <IconComponent className="w-7 h-7" />
                       </div>
@@ -112,17 +101,27 @@ export default function OurServices() {
                         {service.title}
                       </h3>
 
-                      <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed mb-6 sm:mb-8">
+                      <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed mb-6">
                         {service.description}
                       </p>
+
+                      {/* Bullet Features */}
+                      <div className="space-y-2.5 mb-8">
+                        {service.bulletPoints.map((pt) => (
+                          <div key={pt} className="flex items-center gap-2 text-xs font-semibold text-gray-300">
+                            <CheckCircle className="w-4 h-4 text-primary shrink-0" />
+                            <span>{pt}</span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
 
-                    {/* Bottom View Details Action Link */}
+                    {/* Bottom Action Link */}
                     <a
                       href="#contact"
                       className="pt-6 border-t border-border/40 flex items-center justify-between text-xs font-bold uppercase tracking-wider text-foreground group-hover:text-primary transition-colors"
                     >
-                      <span>VIEW DETAILS</span>
+                      <span>Inquire Service</span>
                       <span className="w-9 h-9 rounded-full bg-secondary text-primary group-hover:bg-primary group-hover:text-primary-foreground flex items-center justify-center transition-all duration-300">
                         <ArrowUpRight className="w-4 h-4" />
                       </span>
@@ -133,6 +132,35 @@ export default function OurServices() {
             })}
           </CarouselContent>
         </Carousel>
+
+        {/* Our Process Section */}
+        <div className="mt-20 pt-16 border-t border-border/50">
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-primary">
+              OUR PROCESS
+            </span>
+            <h3 className="text-2xl sm:text-3xl font-extrabold text-foreground mt-2">
+              How We Turn Ideas Into Impactful Products
+            </h3>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6">
+            {processSteps.map((p) => (
+              <div
+                key={p.step}
+                className="glass-panel p-5 rounded-2xl border border-border/80 hover:border-primary/50 transition-all duration-300 relative flex flex-col justify-between"
+              >
+                <div>
+                  <span className="text-3xl font-black text-primary/40 block mb-2 font-mono">
+                    {p.step}
+                  </span>
+                  <h4 className="text-base font-bold text-foreground mb-1">{p.title}</h4>
+                  <p className="text-xs text-muted-foreground leading-relaxed">{p.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

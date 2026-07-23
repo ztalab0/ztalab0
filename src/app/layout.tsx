@@ -1,43 +1,43 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inter } from "next/font/google";
+import { Alatsi, Poppins } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const alatsi = Alatsi({
+  weight: "400",
   subsets: ["latin"],
+  variable: "--font-alatsi",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const poppins = Poppins({
+  weight: ["300", "400", "500", "600", "700", "800"],
   subsets: ["latin"],
+  variable: "--font-poppins",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://ztalab.com"),
   title: {
-    default: "ZTA LAB | Modern Digital Engineering & AI Agency",
-    template: "%s | ZTA LAB",
+    default: "ZTA Lab | Creative Technology & Digital Agency",
+    template: "%s | ZTA Lab",
   },
   description:
-    "ZTA LAB is an award-winning digital engineering agency specializing in custom Next.js web applications, AI automation workflows, high-availability cloud DevOps, and brand design systems.",
+    "At ZTA Lab, we craft high-performance websites, powerful applications, and data-driven digital marketing strategies to help businesses scale faster.",
   keywords: [
+    "ZTA Lab",
     "ZTA LAB",
     "Digital Agency",
-    "Web Engineering",
-    "Next.js Agency",
-    "AI Automation",
-    "UI/UX Design",
-    "Cloud DevOps",
+    "Website Design",
+    "Website Development",
+    "App Development",
+    "Digital Marketing",
+    "SEO Optimization",
     "Software Engineering",
-    "Brand Strategy",
-    "Full Stack Development",
+    "Dhaka Agency",
   ],
-  authors: [{ name: "ZTA LAB", url: "https://ztalab.com" }],
-  creator: "ZTA LAB",
-  publisher: "ZTA LAB",
+  authors: [{ name: "ZTA Lab", url: "https://ztalab.com" }],
+  creator: "ZTA Lab",
+  publisher: "ZTA Lab",
   formatDetection: {
     email: false,
     address: false,
@@ -47,17 +47,17 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "ZTA LAB | Modern Digital Engineering & AI Agency",
+    title: "ZTA Lab | Creative Technology & Digital Agency",
     description:
-      "Fueling business growth with cutting-edge web engineering, AI workflow automation, cloud DevOps, and brand design systems.",
+      "We craft high-performance websites, powerful applications, and data-driven digital marketing strategies.",
     url: "https://ztalab.com",
-    siteName: "ZTA LAB",
+    siteName: "ZTA Lab",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image.jpeg",
         width: 1200,
         height: 628,
-        alt: "ZTA LAB - Digital Engineering & AI Agency",
+        alt: "ZTA Lab - Creative Technology & Digital Agency",
       },
     ],
     locale: "en_US",
@@ -65,10 +65,13 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ZTA LAB | Modern Digital Engineering & AI Agency",
+    title: "ZTA Lab | Creative Technology & Digital Agency",
     description:
-      "Architecting high-performance web software, AI automation, and digital brand product systems.",
-    images: ["/og-image.png"],
+      "We craft high-performance websites, powerful applications, and data-driven digital marketing strategies.",
+    images: [
+      "/og-image.jpeg",
+      "/assets/LOGO/PNG Logo without BG/Brand Color 1 (WtB).png",
+    ],
     creator: "@ztalab",
   },
   robots: {
@@ -83,26 +86,25 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    icon: "/assets/LOGO/SVG Lgos/Brand Color 2.svg",
+    shortcut: "/assets/LOGO/SVG Lgos/Brand Color 2.svg",
+    apple: "/assets/LOGO/PNG Logo without BG/Brand Color 1 (WtB).png",
   },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  name: "ZTA LAB",
+  name: "ZTA Lab",
   url: "https://ztalab.com",
-  logo: "https://ztalab.com/logo.png",
-  image: "https://ztalab.com/og-image.png",
+  logo: "https://ztalab.com/assets/LOGO/SVG%20Lgos/Brand%20Color%202.svg",
+  image: "https://ztalab.com/og%2Dimage.jpeg",
   description:
-    "ZTA LAB is an award-winning digital engineering agency specializing in custom web applications, AI automation workflows, cloud infrastructure, and brand identity.",
-  telephone: "+1-603-555-0123",
-  email: "hello@ztalab.com",
+    "ZTA Lab is a creative technology agency founded by a team of passionate engineers and digital strategists.",
+  telephone: "+8801976540046",
+  email: "info@ztalab.com",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "House 178/196, Avenue 01, Uttara DOHS",
     addressLocality: "Dhaka",
     addressCountry: "Bangladesh",
   },
@@ -110,9 +112,8 @@ const jsonLd = {
     "https://facebook.com",
     "https://instagram.com",
     "https://linkedin.com",
-    "https://twitter.com",
+    "https://wa.me/8801976540046",
   ],
-  priceRange: "$$$",
 };
 
 export default function RootLayout({
@@ -126,10 +127,9 @@ export default function RootLayout({
       className={cn(
         "h-full",
         "antialiased",
-        geistSans.variable,
-        geistMono.variable,
+        alatsi.variable,
+        poppins.variable,
         "font-sans",
-        inter.variable,
       )}
     >
       <head>
@@ -138,7 +138,9 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col bg-background text-foreground selection:bg-primary selection:text-primary-foreground">
+        {children}
+      </body>
     </html>
   );
 }

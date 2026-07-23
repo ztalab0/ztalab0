@@ -5,38 +5,43 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Dark Agency Teal Palette mapped to standard Shadcn Variables */
-  --background: #051F20;
+  /* True Black Creative Agency Palette mapped to standard Shadcn Variables */
+  --background: #000000;
   --foreground: #ffffff;
-  --card: #0B2B26;
+  --card: #0a0a0a;
   --card-foreground: #ffffff;
-  --popover: #0B2B26;
+  --popover: #0a0a0a;
   --popover-foreground: #ffffff;
   --primary: #26E09C;
-  --primary-foreground: #051F20;
-  --secondary: #163832;
+  --primary-foreground: #000000;
+  --secondary: #111827;
   --secondary-foreground: #ffffff;
-  --muted: #163832;
-  --muted-foreground: #8EB69B;
-  --accent: #163832;
+  --muted: #161f2e;
+  --muted-foreground: #9ca3af;
+  --accent: #111827;
   --accent-foreground: #26E09C;
   --destructive: #ef4444;
-  --border: #235347;
-  --input: #235347;
+  --border: #1f2937;
+  --input: #1f2937;
   --ring: #26E09C;
   --radius: 0.75rem;
 
-  --sidebar: #0B2B26;
+  --sidebar: #0a0a0a;
   --sidebar-foreground: #ffffff;
   --sidebar-primary: #26E09C;
-  --sidebar-primary-foreground: #051F20;
-  --sidebar-accent: #163832;
+  --sidebar-primary-foreground: #000000;
+  --sidebar-accent: #111827;
   --sidebar-accent-foreground: #26E09C;
-  --sidebar-border: #235347;
+  --sidebar-border: #1f2937;
   --sidebar-ring: #26E09C;
 }
 
 @theme inline {
+  --font-alatsi: var(--font-alatsi);
+  --font-poppins: var(--font-poppins);
+  --font-sans: var(--font-poppins), system-ui, sans-serif;
+  --font-heading: var(--font-alatsi), sans-serif;
+
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
@@ -72,9 +77,13 @@ html {
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-family: var(--font-poppins), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   overflow-x: hidden;
   cursor: default;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-alatsi), var(--font-poppins), sans-serif;
 }
 
 /* Custom Scrollbar */
@@ -82,14 +91,14 @@ body {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #051F20;
+  background: #000000;
 }
 ::-webkit-scrollbar-thumb {
-  background: #163832;
+  background: #1f2937;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #8EB69B;
+  background: #26E09C;
 }
 
 /* Keyframe Animations */
@@ -105,7 +114,7 @@ body {
 .animate-marquee {
   display: flex;
   width: max-content;
-  animation: marquee 30s linear infinite;
+  animation: marquee 35s linear infinite;
 }
 
 .animate-marquee:hover {
@@ -114,12 +123,12 @@ body {
 
 @keyframes pulseGlow {
   0%, 100% {
-    opacity: 0.4;
+    opacity: 0.3;
     transform: scale(1);
   }
   50% {
-    opacity: 0.8;
-    transform: scale(1.05);
+    opacity: 0.7;
+    transform: scale(1.04);
   }
 }
 
@@ -129,39 +138,39 @@ body {
 
 /* Glassmorphism Utilities using Shadcn tokens */
 .glass-panel {
-  background: rgba(11, 43, 38, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(35, 83, 71, 0.6);
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(31, 41, 55, 0.7);
 }
 
 .glass-panel-hover {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .glass-panel-hover:hover {
-  background: rgba(22, 56, 50, 0.95);
-  border-color: rgba(142, 182, 155, 0.5);
+  background: rgba(17, 24, 39, 0.95);
+  border-color: rgba(38, 224, 156, 0.4);
   box-shadow: 0 10px 30px -10px rgba(38, 224, 156, 0.2);
 }
 
 .dark {
-  --background: #051F20;
+  --background: #000000;
   --foreground: #ffffff;
-  --card: #0B2B26;
+  --card: #0a0a0a;
   --card-foreground: #ffffff;
-  --popover: #0B2B26;
+  --popover: #0a0a0a;
   --popover-foreground: #ffffff;
   --primary: #26E09C;
-  --primary-foreground: #051F20;
-  --secondary: #163832;
+  --primary-foreground: #000000;
+  --secondary: #111827;
   --secondary-foreground: #ffffff;
-  --muted: #163832;
-  --muted-foreground: #8EB69B;
-  --accent: #163832;
+  --muted: #161f2e;
+  --muted-foreground: #9ca3af;
+  --accent: #111827;
   --accent-foreground: #26E09C;
   --destructive: #ef4444;
-  --border: #235347;
-  --input: #235347;
+  --border: #1f2937;
+  --input: #1f2937;
   --ring: #26E09C;
 }
 

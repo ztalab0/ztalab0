@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowUpRight, Sparkles } from "lucide-react";
+import { ArrowUpRight, Sparkles, ExternalLink } from "lucide-react";
 import ProjectModal, { ProjectData } from "./ProjectModal";
 import {
   Carousel,
@@ -18,74 +18,74 @@ export default function CompletedProjects() {
   const projects: ProjectData[] = [
     {
       id: "1",
-      title: "Digital Excellence for Modern Businesses",
-      category: "App Development",
+      title: "High-Performance E-Commerce & Web Platform",
+      category: "Website Design & Development",
       image:
         "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
       description:
-        "A full-suite mobile and web application built for enterprise analytics, featuring real-time telemetry dashboard, offline sync, and bank-grade security protocols.",
-      client: "Aura FinTech Global",
+        "A fast, responsive e-commerce web platform engineered for maximum conversion, smooth checkout flow, and custom product catalog management.",
+      client: "Aura Commerce",
       year: "2026",
-      tags: ["React Native", "TypeScript", "GraphQL", "TailwindCSS"],
+      tags: ["Next.js", "TypeScript", "TailwindCSS", "Stripe"],
       deliverables: [
-        "iOS & Android App Suite",
-        "Real-Time Analytics Engine",
-        "Design System & Component UI",
-        "Cloud API Integration",
+        "E-Commerce Platform",
+        "Responsive Mobile UI",
+        "SEO Optimization",
+        "Payment Gateway Integration",
       ],
     },
     {
       id: "2",
-      title: "Building Bridges Between Brands And Audiences",
+      title: "Cross-Platform Mobile Application Suite",
       category: "App Development",
       image:
         "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
       description:
-        "Comprehensive brand identity transformation and interactive web portal for a global eCommerce pioneer, boosting conversion rates by 142%.",
-      client: "Nexus Global Commerce",
-      year: "2025",
-      tags: ["Next.js 16", "TailwindCSS", "Framer Motion", "Stripe"],
+        "Scalable Android & iOS mobile application featuring real-time data sync, user authentication, intuitive UI/UX design, and push notifications.",
+      client: "Nexus App Ecosystem",
+      year: "2026",
+      tags: ["React Native", "Node.js", "UI/UX Design", "GraphQL"],
       deliverables: [
-        "Brand Guidelines & Identity",
-        "High-Performance Web Portal",
-        "Custom Checkout Flow",
-        "SEO Optimization & Strategy",
+        "iOS & Android Mobile App",
+        "User Experience Design",
+        "Backend API Architecture",
+        "Cloud Deployment",
       ],
     },
     {
       id: "3",
-      title: "AI-Powered Automation for NextGen Enterprises",
-      category: "AI Solutions",
+      title: "Data-Driven Digital Marketing Campaign",
+      category: "Digital Marketing",
       image:
         "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
       description:
-        "Intelligent document classification and workflow automation suite powered by LLMs and predictive neural pipelines.",
-      client: "Cipher Core Systems",
-      year: "2026",
-      tags: ["Python", "TensorFlow", "Next.js", "FastAPI"],
+        "Strategic SEO optimization, targeted Meta & Google Ads campaigns, and social media branding that increased client leads by 185%.",
+      client: "Cipher Growth",
+      year: "2025",
+      tags: ["SEO Optimization", "Google Ads", "Meta Ads", "Analytics"],
       deliverables: [
-        "Custom LLM Fine-Tuning",
-        "Interactive Admin Dashboard",
-        "Automated OCR Extraction",
-        "SOC2 Compliance Verification",
+        "Search Engine Optimization",
+        "Paid Ad Campaigns",
+        "Social Media Branding",
+        "Conversion Analytics",
       ],
     },
     {
       id: "4",
-      title: "Sustainable Brand Architecture & Ecosystem",
-      category: "Branding",
+      title: "Custom Enterprise Web Portal & Brand Identity",
+      category: "Website Design & Development",
       image:
         "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80",
       description:
-        "Strategic rebranding, packaging design, and 3D motion identity for an eco-conscious luxury lifestyle brand.",
+        "Bespoke business portal with interactive user dashboard, custom web workflows, and modern brand design system.",
       client: "Verde Living Group",
       year: "2025",
-      tags: ["Brand Identity", "3D Motion Design", "Packaging", "UI/UX"],
+      tags: ["Website Design", "Web App", "Branding", "UI/UX"],
       deliverables: [
-        "Brand Book & Typography",
-        "Interactive 3D Product Viewer",
-        "Sustainable Packaging Assets",
-        "Omnichannel Marketing Kit",
+        "Business Website",
+        "Custom UI Component Library",
+        "Brand Identity Assets",
+        "Speed & Performance Tuning",
       ],
     },
   ];
@@ -96,7 +96,7 @@ export default function CompletedProjects() {
       : projects.filter((p) => p.category === activeCategory);
 
   return (
-    <section id="projects" className="py-20 sm:py-24 bg-background relative">
+    <section id="portfolio" className="py-20 sm:py-24 bg-background relative border-t border-border/40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 sm:mb-12">
@@ -107,7 +107,7 @@ export default function CompletedProjects() {
                 Our Portfolio
               </span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-foreground">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground">
               Completed Projects
             </h2>
           </div>
@@ -117,7 +117,7 @@ export default function CompletedProjects() {
               href="#contact"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-extrabold text-sm hover:opacity-90 transition-opacity shadow-lg shadow-primary/20"
             >
-              <span>View All Projects</span>
+              <span>Request Custom Project</span>
               <ArrowUpRight className="w-4 h-4" />
             </a>
           </div>
@@ -125,7 +125,7 @@ export default function CompletedProjects() {
 
         {/* Category Filter Pills */}
         <div className="flex flex-wrap gap-2 sm:gap-2.5 mb-8 sm:mb-10 pb-2 border-b border-border/40">
-          {["All", "App Development", "Branding", "AI Solutions"].map((cat) => (
+          {["All", "Website Design & Development", "App Development", "Digital Marketing"].map((cat) => (
             <button
               key={cat}
               type="button"
@@ -141,7 +141,7 @@ export default function CompletedProjects() {
           ))}
         </div>
 
-        {/* Official Shadcn Carousel Component */}
+        {/* Official Carousel Component */}
         <Carousel
           opts={{
             align: "start",
@@ -161,24 +161,35 @@ export default function CompletedProjects() {
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent opacity-80 group-hover:opacity-60 transition-opacity" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-card via-card/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity" />
                   </div>
 
-                  {/* Floating Bottom Card Banner */}
+                  {/* Bottom Card Overview */}
                   <div className="p-6 sm:p-8 bg-card -mt-10 relative z-10 flex flex-col justify-between flex-1 border-t border-border/40">
                     <div>
-                      <span className="inline-block text-xs font-bold uppercase tracking-wider text-primary mb-2">
-                        {project.category}
-                      </span>
+                      <div className="flex items-center justify-between gap-2 mb-2">
+                        <span className="inline-block text-xs font-bold uppercase tracking-wider text-primary">
+                          {project.category}
+                        </span>
+                        <span className="text-[11px] text-muted-foreground font-semibold px-2.5 py-0.5 rounded-full bg-secondary border border-border">
+                          {project.client}
+                        </span>
+                      </div>
                       <h3 className="text-lg sm:text-2xl font-bold text-foreground group-hover:text-primary transition-colors leading-snug">
                         {project.title}
                       </h3>
+                      <p className="mt-3 text-xs sm:text-sm text-muted-foreground leading-relaxed line-clamp-2">
+                        {project.description}
+                      </p>
                     </div>
 
                     <div className="mt-6 pt-4 border-t border-border/30 flex items-center justify-between">
-                      <span className="text-xs font-medium text-muted-foreground">Click to view details</span>
+                      <span className="text-xs font-medium text-muted-foreground flex items-center gap-1">
+                        <ExternalLink className="w-3.5 h-3.5 text-primary" />
+                        <span>View Project Details</span>
+                      </span>
                       <span className="w-10 h-10 rounded-full bg-secondary group-hover:bg-primary text-primary group-hover:text-primary-foreground flex items-center justify-center transition-all duration-300">
                         <ArrowUpRight className="w-5 h-5" />
                       </span>
@@ -189,7 +200,7 @@ export default function CompletedProjects() {
             ))}
           </CarouselContent>
 
-          {/* Shadcn Carousel Controls */}
+          {/* Carousel Navigation Buttons */}
           <div className="flex items-center justify-center gap-4 mt-10 sm:mt-12 relative">
             <CarouselPrevious className="static translate-y-0 w-12 h-12 rounded-full border border-border bg-card text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all" />
             <CarouselNext className="static translate-y-0 w-12 h-12 rounded-full border border-border bg-card text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all" />

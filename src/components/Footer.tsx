@@ -1,6 +1,7 @@
 "use client";
 
-import { Sparkles, Phone, ArrowUp, Mail, MapPin, Globe, Share2, MessageCircle, Send } from "lucide-react";
+import { Phone, ArrowUp, Mail, MapPin } from "lucide-react";
+import { FacebookIcon, InstagramIcon, LinkedinIcon, DribbbleIcon, WhatsappIcon } from "./SocialIcons";
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -13,17 +14,11 @@ export default function Footer() {
         {/* Top Header Row with Logo & Quick Phone Callout */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-12 border-b border-border/60">
           <a href="#hero" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-primary-foreground font-bold shadow-lg shadow-primary/20">
-              <Sparkles className="w-5 h-5 text-primary-foreground" />
-            </div>
-            <div className="flex flex-col">
-              <span className="text-xl font-extrabold tracking-wider text-foreground">
-                ZTA<span className="text-primary">LAB</span>
-              </span>
-              <span className="text-[10px] text-muted-foreground uppercase tracking-widest -mt-1 font-semibold">
-                Digital Agency
-              </span>
-            </div>
+            <img
+              src="/assets/LOGO/SVG Lgos/White with no BG.svg"
+              alt="ZTA Lab Logo"
+              className="h-9 sm:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+            />
           </a>
 
           {/* Quick Call Callout Box */}
@@ -33,31 +28,31 @@ export default function Footer() {
             </div>
             <div className="flex flex-col">
               <span className="text-xs text-muted-foreground uppercase tracking-wider font-semibold">
-                Call Any Time
+                Direct Contact
               </span>
-              <a href="tel:6035550123" className="text-sm font-extrabold text-foreground hover:text-primary transition-colors">
-                (603) 555-0123
+              <a href="tel:+8801976540046" className="text-sm font-extrabold text-foreground hover:text-primary transition-colors">
+                +8801976540046
               </a>
             </div>
           </div>
         </div>
 
-        {/* Simplified Main Footer Content */}
+        {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 py-12 border-b border-border/60">
           {/* Column 1: Agency Tagline & Direct Info */}
           <div className="md:col-span-5 space-y-4">
             <p className="text-sm text-muted-foreground leading-relaxed max-w-sm">
-              Empowering global businesses with high-impact web software, strategic brand identity, and scalable enterprise digital solutions.
+              ZTA Lab is a creative technology agency specializing in high-performance websites, powerful applications, and result-oriented digital marketing strategies.
             </p>
             <div className="space-y-2 pt-2 text-xs text-gray-300">
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-primary shrink-0" />
-                <span>House 178/196, Avenue 01, Uttara DOHS, Dhaka, Bangladesh</span>
+                <span>Dhaka, Bangladesh</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-primary shrink-0" />
-                <a href="mailto:hello@ztalab.com" className="hover:text-primary transition-colors">
-                  hello@ztalab.com
+                <a href="mailto:info@ztalab.com" className="hover:text-primary transition-colors">
+                  info@ztalab.com
                 </a>
               </div>
             </div>
@@ -70,19 +65,19 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-xs text-muted-foreground">
               <li>
-                <a href="#about" className="hover:text-primary transition-colors">About Us</a>
+                <a href="#services" className="hover:text-primary transition-colors">Services</a>
               </li>
               <li>
-                <a href="#projects" className="hover:text-primary transition-colors">Completed Projects</a>
+                <a href="#portfolio" className="hover:text-primary transition-colors">Portfolio</a>
               </li>
               <li>
-                <a href="#services" className="hover:text-primary transition-colors">Our Services</a>
+                <a href="#feedbacks" className="hover:text-primary transition-colors">Feedbacks</a>
               </li>
               <li>
-                <a href="#team" className="hover:text-primary transition-colors">Meet Our Team</a>
+                <a href="#team" className="hover:text-primary transition-colors">Team</a>
               </li>
               <li>
-                <a href="#contact" className="hover:text-primary transition-colors">Get in Touch</a>
+                <a href="#contact" className="hover:text-primary transition-colors">Contact Us</a>
               </li>
             </ul>
           </div>
@@ -90,43 +85,56 @@ export default function Footer() {
           {/* Column 3: Connect & Socials */}
           <div className="md:col-span-4 space-y-4">
             <h4 className="text-sm font-bold uppercase tracking-wider text-foreground">
-              Social Community
+              Follow ZTA Lab
             </h4>
             <p className="text-xs text-muted-foreground">
-              Follow our agency updates, design showcases, and open-source contributions.
+              Stay connected with our latest projects, agency news, and design updates.
             </p>
             <div className="flex items-center gap-3 text-gray-300">
               <a
-                href="https://github.com"
+                href="https://facebook.com"
                 target="_blank"
                 rel="noreferrer"
+                aria-label="Facebook"
                 className="p-2.5 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors border border-border"
               >
-                <Globe className="w-4 h-4" />
+                <FacebookIcon className="w-4 h-4" />
+              </a>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Instagram"
+                className="p-2.5 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors border border-border"
+              >
+                <InstagramIcon className="w-4 h-4" />
               </a>
               <a
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noreferrer"
+                aria-label="LinkedIn"
                 className="p-2.5 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors border border-border"
               >
-                <Share2 className="w-4 h-4" />
-              </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noreferrer"
-                className="p-2.5 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors border border-border"
-              >
-                <MessageCircle className="w-4 h-4" />
+                <LinkedinIcon className="w-4 h-4" />
               </a>
               <a
                 href="https://dribbble.com"
                 target="_blank"
                 rel="noreferrer"
+                aria-label="Dribbble"
                 className="p-2.5 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors border border-border"
               >
-                <Send className="w-4 h-4" />
+                <DribbbleIcon className="w-4 h-4" />
+              </a>
+              <a
+                href="https://wa.me/8801976540046"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="WhatsApp"
+                className="p-2.5 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors border border-border"
+              >
+                <WhatsappIcon className="w-4 h-4" />
               </a>
             </div>
           </div>
@@ -134,7 +142,7 @@ export default function Footer() {
 
         {/* Bottom Bar & Back To Top */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
-          <p>© {new Date().getFullYear()} ZTA LAB. All Rights Reserved.</p>
+          <p>© {new Date().getFullYear()} ZTA Lab. All Rights Reserved.</p>
 
           <div className="flex items-center gap-6">
             <a href="#contact" className="hover:text-foreground transition-colors">Terms & Conditions</a>

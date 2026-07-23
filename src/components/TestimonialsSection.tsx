@@ -1,24 +1,17 @@
 "use client";
 
 import { Star, Sparkles, Quote } from "lucide-react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 
 export default function TestimonialsSection() {
   const testimonials = [
     {
       id: "1",
       name: "Sarah Sanders",
-      role: "VP of Product, FinTech Global",
+      role: "VP of Digital, Commerce Global",
       avatar:
         "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80",
       content:
-        "ZTA LAB transformed our legacy web architecture into a lightning-fast Next.js application. Their attention to design detail and engineering precision exceeded all expectations.",
+        "ZTA Lab transformed our online presence into a lightning-fast modern web application. Their technical precision and creative vision exceeded all our expectations.",
       rating: 5,
     },
     {
@@ -28,84 +21,86 @@ export default function TestimonialsSection() {
       avatar:
         "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
       content:
-        "Working with ZTA LAB was seamless from day one. They delivered our AI workflow platform 2 weeks ahead of schedule with flawless reliability.",
+        "Working with ZTA Lab was seamless from day one. They developed our custom web and mobile app suite on schedule with flawless reliability and design.",
       rating: 5,
     },
     {
       id: "3",
       name: "Elena Rostova",
-      role: "Chief Marketing Officer, Aura Luxe",
+      role: "Marketing Director, Aura Luxe",
       avatar:
         "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80",
       content:
-        "Our conversion rate jumped 140% post-rebrand. Their creative vision combined with technical execution is truly world-class.",
+        "Our traffic and client conversions grew dramatically after ZTA Lab implemented our digital marketing and SEO strategy. Truly world-class agency partners.",
+      rating: 5,
+    },
+    {
+      id: "4",
+      name: "David H. Sterling",
+      role: "Managing Director, Apex Brands",
+      avatar:
+        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80",
+      content:
+        "The team at ZTA Lab is dedicated, skilled, and transparent. They delivered a custom enterprise platform tailored exactly to our business needs.",
       rating: 5,
     },
   ];
 
   return (
-    <section className="py-20 sm:py-24 bg-background relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Carousel
-          opts={{
-            align: "start",
-            loop: true,
-          }}
-          className="w-full"
-        >
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 sm:mb-12">
-            <div>
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-card border border-border w-fit mb-3">
-                <Sparkles className="w-3.5 h-3.5 text-primary" />
-                <span className="text-xs font-bold uppercase tracking-wider text-primary">
-                  Our Client Feedback
-                </span>
-              </div>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-foreground">
-                What Our Partners Say About Us
-              </h2>
-            </div>
-
-            <div className="flex items-center gap-3 relative">
-              <CarouselPrevious className="static translate-y-0 w-11 h-11 rounded-full border border-border bg-card text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all shadow-md" />
-              <CarouselNext className="static translate-y-0 w-11 h-11 rounded-full border border-border bg-card text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all shadow-md" />
-            </div>
+    <section id="feedbacks" className="py-20 sm:py-24 bg-card/30 border-t border-border/40 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 sm:mb-12">
+        <div className="text-center max-w-2xl mx-auto">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-card border border-border w-fit mb-3">
+            <Sparkles className="w-3.5 h-3.5 text-primary" />
+            <span className="text-xs font-bold uppercase tracking-wider text-primary">
+              Our Client Feedback
+            </span>
           </div>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground">
+            What Our Partners Say About Us
+          </h2>
+          <p className="mt-3 text-sm text-muted-foreground">
+            Real feedback from business owners and founders who scaled with ZTA Lab.
+          </p>
+        </div>
+      </div>
 
-          <CarouselContent className="-ml-4">
-            {testimonials.map((item) => (
-              <CarouselItem key={item.id} className="pl-4 md:basis-1/2">
-                <div className="glass-panel bg-card p-6 sm:p-8 rounded-3xl border border-border relative flex flex-col justify-between shadow-xl hover:border-primary/50 transition-all duration-300 h-full">
-                  <Quote className="absolute top-6 right-6 w-10 h-10 text-border/60" />
+      {/* Automatic Continuous Horizontal Scroll Track (Pause on Hover) */}
+      <div className="relative w-full overflow-hidden">
+        <div className="flex animate-marquee space-x-6 items-stretch">
+          {[...testimonials, ...testimonials].map((item, idx) => (
+            <div
+              key={`${item.id}-${idx}`}
+              className="w-[320px] sm:w-[420px] shrink-0 glass-panel bg-card p-6 sm:p-8 rounded-3xl border border-border relative flex flex-col justify-between shadow-xl hover:border-primary/50 transition-all duration-300"
+            >
+              <Quote className="absolute top-6 right-6 w-8 h-8 text-border/60" />
 
-                  <div>
-                    <div className="flex items-center gap-1 text-primary mb-6">
-                      {[...Array(item.rating)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 fill-current" />
-                      ))}
-                    </div>
-
-                    <p className="text-base sm:text-lg text-gray-200 leading-relaxed italic mb-8">
-                      "{item.content}"
-                    </p>
-                  </div>
-
-                  <div className="flex items-center gap-4 pt-6 border-t border-border/50">
-                    <img
-                      src={item.avatar}
-                      alt={item.name}
-                      className="w-12 h-12 rounded-full border-2 border-primary object-cover"
-                    />
-                    <div>
-                      <h4 className="text-base font-bold text-foreground">{item.name}</h4>
-                      <p className="text-xs text-muted-foreground">{item.role}</p>
-                    </div>
-                  </div>
+              <div>
+                <div className="flex items-center gap-1 text-primary mb-4">
+                  {[...Array(item.rating)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-current" />
+                  ))}
                 </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-        </Carousel>
+
+                <p className="text-xs sm:text-sm text-gray-200 leading-relaxed italic mb-6">
+                  "{item.content}"
+                </p>
+              </div>
+
+              <div className="flex items-center gap-4 pt-4 border-t border-border/50">
+                <img
+                  src={item.avatar}
+                  alt={item.name}
+                  className="w-11 h-11 rounded-full border-2 border-primary object-cover"
+                />
+                <div>
+                  <h4 className="text-sm font-bold text-foreground">{item.name}</h4>
+                  <p className="text-[11px] text-muted-foreground">{item.role}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
